@@ -1,0 +1,876 @@
+/* Comum para todos */
+#MenuMobileAberto{
+    display: none;
+}
+
+p.boxTexto{
+    border: 0.1em solid gray;
+    height: 6em;
+    width: 15em;
+    text-align: center;
+    background: rgba(78, 72, 72, 0.86);
+    color: white;
+    padding-top: 1em;
+}
+article#fotos section a{
+    text-decoration: none;
+}
+
+
+/* ----------------------------------- seção Contatos */
+#contatosMonrei img{
+    width: auto;
+    height: 1em;
+}
+#contatosMonrei a{
+    text-decoration: none;
+    color: gray;
+}
+#contatosMonrei p{
+    padding: 0.5em;
+    color: gray;
+    text-align: left;
+}
+#contatosMonrei hr{
+    background-color: white;
+    width: 80%;
+    height: 0.2em;
+    border-style: double gray;
+}
+#contatosMonrei div{
+    text-align: center;
+}
+#contatosMonrei iframe{
+    width: 80%;
+    height: 30em;
+    border: 0;
+    margin: auto;
+}
+
+/* ----------------------------------- slogan */
+.logo .logoTexto{
+    font-family: slogan;
+}
+.logo{
+    background: black;
+    color:  white;
+    text-align: center;
+}
+
+
+/* ----------------------------------- IBAGENS */
+img{
+    width: 100%;
+}
+p.boxTexto img.icoMediaArtigo{
+        height: 2em;
+        width: auto;
+        padding-top: 0.4em;
+}
+.goToshy{
+    width: 3em;
+    height: auto;
+    margin: auto;
+}
+.goToshy p{
+    text-align: center;
+    font-style: italic;
+}
+
+/* ----------------------------------- Títulos */
+.historia{
+    width: 100%;
+    background-image: url("/images/barra_historia.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}    
+.quemSomos{
+    width: 100%;
+    margin: 0;
+    background-image: url("/images/barra_quem_somos.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.fotosVideos{
+    width: 100%;
+    margin: 0;
+    background-image: url("/images/barra_fotos_e_videos.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.contato{
+    width: 100%;
+    margin: 0;
+    background-image: url("/images/barra_contato.png") ;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+@font-face{
+    font-family: panda;
+    src: url('/css/font/Roboto-Regular.ttf');
+}
+@font-face{
+    font-family: slogan;
+    src: url('/css/font/Allura-Regular.ttf');
+}
+
+
+
+
+
+
+
+/* ------------------------------------------------- Inicio das MediaQueries */
+
+@media all and (max-width : 768px){
+    /*---------------------------------- Display none */
+    #redesLogo{
+        display: none;
+    }
+    
+    
+    /*------------------------------------ Slogan */
+    .logo{
+        
+        padding-top: 3em;
+    }
+    .logo .logoTexto{
+        font-size: 3.4em;
+    }
+    
+    
+    
+    
+    
+    
+    /*---------------------------------- Menu */
+        
+    nav {                   /* esconde o menu */
+        width: 20em;
+		margin-left: 0;
+		height: auto;
+        display: block;
+        left: -20em;
+		position:fixed;
+        background: white;
+        top:0;
+        z-index: 4;
+		transition: margin-left 2s;
+    }
+	article {
+		transition: opacity 2s;
+	}
+    nav ul{                   /* altera o layout da lista */
+        font-size: 2em;
+        list-style: none;
+        text-align: center;
+        margin-left: -2em;
+    }
+    nav ul a{                   /* formata os links do menu */
+        text-decoration: none;
+        color: gray;
+    }
+    nav ul li{                   /* formata os links do menu */
+        padding-bottom: 1em;
+    }
+    #caixaBox{                   /* esconde o checkbox */
+        display: none;
+    }
+    #MenuMobileAberto{
+        display: block;
+        width: 3em;
+        margin: auto;
+    }
+    label:after{                     /* altera o label para menu fechado */
+        display:block;
+        position: fixed;
+        content: url("/images/logo_menu_mobile.png");/* <------ alterar endereço */
+        top: 0;
+        width: 5em;
+        height: 5em;
+        z-index: 3;
+		
+    }
+    
+    input[type=checkbox]:checked ~ label:after {                   /* altera o label para menu aberto */
+        
+        width: 20em;
+        height: 0;
+        background: white;
+    }
+    input[type=checkbox]:checked ~ nav {                    /* mostra o menu */
+        height: auto;
+        margin-left:20em;
+    }
+    input[type=checkbox]:checked ~ article {              /* esmaece o conteúdo */
+        opacity: 0.2;
+    }
+    input[type=checkbox]:unchecked ~ label:after{ /* Pensei em mexer aqui */
+		
+	}
+    
+    
+    /*---------------------------------------------- Medias sociais */
+    .redes{
+        width: 100%;
+        margin-left: 10em;
+        
+    }
+    .icoMedia{
+        width: auto;
+        height: 2.5em;
+        padding: 2em;
+    }
+        
+    /*---------------------------------------------- Voltar ao topo */
+    div.goTop{
+        position: fixed;
+        bottom: 1em;
+        right: 2.5%;
+        z-index: auto;
+    }
+    
+    /*---------------------------------------------- Estruturas */
+    body{
+        background: black;
+        color: white;
+        width: 100%;
+        margin: 0;
+        overflow-x: hidden;
+        font-size: 62.5%;
+        font-family: panda;
+    }
+    article.corpo{                   /* conteúdo pai */
+        background: rgba(0, 0, 0, 0.36);
+        display: block;
+        width: 95%;
+        margin: 0 auto;
+        overflow-y: hidden;
+    }
+    article.caixa{                    /* filho 1 */
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        background: black;
+    }
+    article header{                   /* filho 1 - títulos */
+        padding: 1% 0% 1% 0%;
+        width: 100%;
+        background: black;
+        font-size: 1.6em;
+    }
+    header div.titulos{                    /* box interno dos títulos */
+        
+        height: 100%;
+        font-size: 2em;
+        padding: 0.5%;
+        text-align: center;
+    }
+    article.pessoa{                    /* filho 2 - artigo Lu e Jom */
+        background: white;
+        height: auto;
+        display: block;     
+    }
+    section{                    /* filho 3 - conteúdo artigo Lu e Jom */
+        width: 100%;
+        margin: auto;
+        background: rgba(255, 255, 255, 0.98);
+        color: black;
+        text-align: justify;
+        display: block;
+    }
+    
+    
+    /*------------------------------------ Imagens */
+    
+    .logoInicio{
+        width: 15em;
+        height: 10em;
+        padding-left: 0.4em;
+        background: black;
+        margin: auto;
+    }
+    
+    #logoMenu {
+        display: none;
+    }
+    
+    #logoToshy{
+        content: url(/images/gotoshy_logo_50gray.png);
+    }
+    
+    #albumFotos img{
+    display: inline;
+    width: auto;
+    height: 8em;
+    padding: 1em;
+    }
+    figure#albumFotos{
+        text-align: center;
+        -webkit-column-count: 3; -moz-column-count: 3; -ms-column-count: 3;
+        -webkit-column-gap: 3; -moz-column-gap: 3; -ms-column-gap: 3;
+    }
+    
+    /*------------------------- SVG */
+    .fil2 {
+        fill: #FEFEFE;
+    }
+    .fil0 {
+        fill:#FEFEFE;
+    }
+    .fil1 {
+        fill:red;
+    }
+    
+    
+    /*-------------------------------------------- conteúdos individuais */
+    
+    section p{
+        font-size: 1.7em;
+        width: 90%;
+        margin: auto;
+    }
+    header.nomes{
+        background: white;
+        font-size: 3em;
+        text-align: center;
+        font-weight: bold;
+    }
+    aside.imgPerfil{
+        width: 30%;
+        height: auto;
+        margin: auto 1em;
+        float: left;
+    }
+    article.pessoa p{
+        width: 80%;
+        margin: 0 auto;
+        padding: 1em;
+        font-size: 1.5em;
+        text-align: justify;
+        
+    }
+    section.meninos{
+        background: black;
+    }    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media all and (min-width : 768px){
+    
+    /*------------------------------------ Display: None */
+    #logoInicio{
+        display: none;
+    }
+    .goTop{
+        display: none;
+    }
+    input, label{
+        display: none;
+    }
+
+    
+    /*------------------------------------ Slogan */
+    .logo{
+        padding-top: 3em;
+    }
+    .logo .logoTexto{
+        font-size: 5em;
+}
+    div .redesLogo img{
+        width: auto;
+        height: 4em;
+        margin: 2em;
+        
+    }
+    
+    
+    /*------------------------------------ menu de fato */
+    nav{
+        display: block;
+        position: fixed;
+        margin: 0 auto;
+        width: 100%;
+        height: 7em;
+        top: 0%;
+        right: 0%;
+        left: 0%;
+        background: black;
+        z-index: 1;
+        font-size: 1.4em;
+    }
+    nav ul{
+        list-style: none;
+        font-size: 1.6em;
+        height: auto;
+        text-align: center;
+        text-align-last: center;
+        margin: 0 5% auto auto;
+    }
+    nav ul li{
+        display: inline-block;
+        align-content: center;
+        text-align: justify;
+        vertical-align: middle;
+        padding: 0.5em;
+    }
+    nav ul li a{
+        text-decoration: none;
+        color: white;
+    }
+    nav ul li a:hover{
+        color: red;
+    }
+    
+    /*------------------------------------ menu de medias sociais */
+    sidebar{
+        position: fixed;
+        top: 1%;
+        right: 2%;
+        z-index: 2; 
+        width: auto;
+        height: auto;
+        display: block;
+    }
+    .icoMedia{
+        width: auto;
+        height: 2em;
+        padding-left: 0.4em;
+    }
+    
+    
+    
+    /*---------------------------------------------- Estruturas */
+    body {
+        background: black;
+        color: white;
+        width: 100%;
+        margin: 0; 
+        font-size: 62.5%;
+        overflow-x: hidden;
+        font-family: panda;
+    }
+    article.corpo{
+        background: rgba(0, 0, 0, 0.6);
+        display: block;
+        width: 80%;
+        margin: 10em auto;
+    }
+    article.caixa{
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        background: black;
+    }
+    article header{
+        padding: 1% 0% 1% 0%;
+        width: 100%;
+        background: black;
+        font-size: 1.6em;
+    }
+    header div.titulos{
+        height: 100%;
+        font-size: 2em;
+        padding: 0.5%;
+
+    }
+    article.pessoa{
+        background: white;
+        height: auto;
+        display: inline-block;
+    }
+    section{
+        width: 100%;
+        margin: auto;
+        background: rgba(255, 255, 255, 0.98);
+        color: black;
+        text-align: justify;
+        display: block;
+    }
+    
+    
+    
+    
+    /*------------------------------------ Imagens */
+    
+    /*---------------------------------------------------------------- propriedades logotipo.SVG */
+    .fil2 {fill:#FEFEFE;}
+    .fil0 {fill:#FEFEFE;}
+    .fil1 {fill:red;}
+    /*---------------------------------------------------------------- Logotipo no menu */
+    nav svg {
+        width: 3.4em;
+        padding: 0.2em;
+    }
+    aside.imgPerfil{
+        width: 30em;
+        height: 28em;
+        margin: auto 1em;
+        float: left;
+    }
+    
+    #albumFotos img{
+    display: inline;
+    width: auto;
+    height: 17em;
+    padding: 1em;
+    }
+    figure#albumFotos{
+        text-align: center;
+        -webkit-column-count: 3; -moz-column-count: 3; -ms-column-count: 3;
+        -webkit-column-gap: 3; -moz-column-gap: 3; -ms-column-gap: 3;
+    }
+    aside.imgPerfil{
+        width: 30em;
+        height: 27em;
+        margin: 0 2em;
+        display: table;
+    }
+    #logoToshy{
+        content: url(/images/gotoshy_logo_50gray.png);
+    }
+    
+    
+    
+    
+    /*---------------------------------------------------------------- Conteúdos Individuais */
+    section p{
+        font-size: 1.7em;
+        width: 80%;
+        margin: auto;
+    }
+    
+    header.nomes{
+        background: white;
+        font-size: 3em;
+        text-align: center;
+        font-weight: bold;
+    }
+    
+    article.pessoa p{
+        width: 90%;
+        margin: 0 auto;
+        padding: 1em;
+        font-size: 1.5em;
+    }
+    
+    
+    section.meninos{
+        background: black;
+    }
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media all and (min-width : 1260px){
+    
+    /*---------------------------------------------------------------- IBAGENS */
+    nav .fil2 {fill:#FEFEFE}
+    nav .fil0 {fill:#FEFEFE}
+    nav .fil1 {fill:red}
+    
+    #albumFotos img{
+    display: inline;
+    width: auto;
+    height: 17em;
+    padding: 1em;
+    }
+    figure#albumFotos{
+        text-align: center;
+        -webkit-column-count: 3; -moz-column-count: 3; -ms-column-count: 3;
+        -webkit-column-gap: 3; -moz-column-gap: 3; -ms-column-gap: 3;
+    }
+    aside.imgPerfil{
+        width: 30em;
+        height: 27em;
+        margin: 0 8em;
+        
+    }
+    #logoToshy{
+        content: url(/images/gotoshy_logo_white.png);
+    }
+    
+    
+    /*------------------------------------ Slogan */
+    #logoInicio .fil0, .fil1, .fil2{
+        fill: black;
+    }
+    .logo{
+        height: 20em;
+        padding-top: 6em;
+    }
+    .logo .logoTexto{
+        font-size: 5em;
+    }
+    
+    div .redesLogo img{
+        width: auto;
+        height: 4.5em;
+        margin: 2em;
+    }
+    
+   
+    
+    
+    /*------------------------------------ Display: none */
+    .goTop{
+        display: none;
+    }
+    input, label{
+        display: none;
+    }
+
+    /*---------------------------------------------------------------- Logotipo no menu */
+    nav svg {
+        width: 4.4em;
+        padding: 0.2em;
+    }
+
+    
+    /*---------------------------------------------------------------- Estrutura */
+    body {
+        background: black;
+        background-image: url("/images/background.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% auto;
+        color: white;
+        width: 100%;
+        margin: 0; 
+        font-size: 62.5%;
+        font-family: panda;
+        overflow-x: hidden;
+    }
+    article.corpo{
+        background: rgba(0, 0, 0, 0.36);
+        display: block;
+        width: 80%;
+        margin: 12em auto;
+    }
+    article.caixa{
+        display: block;
+        width: 98%;
+        height: 100%;
+        margin: auto;
+        background: black;
+    }
+    section{
+        width: 90%;
+        margin: auto;
+        background: rgba(255, 255, 255, 0.98);
+        color: black;
+        padding: 1%;
+        text-align: justify;
+        display: block;
+    }
+    aside{
+        width: 80%;
+        margin: auto;
+    }
+    
+    
+    /*---------------------------------------------------------------- Menu */
+    
+    
+    /*------------------------------------ menu de medias sociais */
+    sidebar{
+        position: fixed;
+        top: 2%;
+        right: 16%;
+        z-index: 2; 
+        width: auto;
+        height: auto;
+        display: block;
+    }
+    .icoMedia{
+        width: auto;
+        height: 2em;
+        
+    }
+    
+
+    /*------------------------------------ menu de fato */
+    nav{
+        display: block;
+        position: fixed;
+        margin: 0 auto;
+        width: 80%;
+        height: 8em;
+        top: 0%;
+        right: 0%;
+        left: 0%;
+        background: black;
+        z-index: 1;
+        font-size: 1.6em;
+    }
+    nav ul{
+        list-style: none;
+        font-size: 1.6em;
+        height: auto;
+        text-align: center;
+        text-align-last: center;
+        margin: 0 5% auto auto;
+    }
+    nav ul li{
+        display: inline-block;
+        align-content: center;
+        text-align: justify;
+        vertical-align: middle;
+        padding: 0.5em;
+    }
+    nav ul li a{
+        text-decoration: none;
+        color: white;
+    }
+    nav ul li a:hover{
+        color: red;
+    }
+
+    
+
+    /*---------------------------------------------------------------- Seções */    
+    
+    /*------------------------------------ títulos das seções */
+    header{
+        padding: 1% 0% 1% 0%;
+        margin: 0px;
+        width: 100%;
+        background: black;
+        font-size: 1.6em;
+    }
+    div.titulos{
+        font-size: 2em;
+        padding: 0.5%;
+    }
+
+    
+    
+    
+    
+    /*---------------------------------------------------------------- Artigos */
+    
+    
+    section p{
+        font-size: 1.7em;
+        width: 80%;
+        margin: auto;
+        display: block;
+    }
+    header.nomes{
+        background: white;
+        font-size: 3em;
+        text-align: center;
+        font-weight: bold;
+    }
+    article.pessoa{
+        background: white;
+        display: inline-block;
+        height: 100%;
+    }
+    article.pessoa p{
+        width: 80%;
+        margin: 0 auto;
+        padding: 2em;
+        font-size: 1.7em;
+        display: inline-block;
+        background: white;
+    }
+    section.meninos{
+        background: white;
+        -webkit-column-count: 2; -moz-column-count: 2; -ms-column-count: 2;
+        -webkit-column-gap: 2; -moz-column-gap: 2; -ms-column-gap: 2;
+    }
+    
+    
+    
+   
+
+    
+    
+    
+}
